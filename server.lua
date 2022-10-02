@@ -16,6 +16,7 @@ AddEventHandler('es:playerLoaded', function(source)
     end
 
     if count >= 2 then
+		zcmg_log('**'..GetPlayerName(source)..' ('..source..')** tentou entrar com a mesma conta de steam no servidor', Config.LogWebhook, Config.LogCor)
         DropPlayer(_source, 'Apenas pode entrar com uma steam!')
     end
 end)
@@ -56,3 +57,8 @@ PerformHttpRequest('https://raw.githubusercontent.com/zcmg/'..GetCurrentResource
 	--------------------------------------------------------------------------^0]]):format(versao, update))
 
 end,'GET')
+
+function zcmg_log(msg, canal, cor)
+	local corfinal = tonumber(cor:gsub("#",""),16)
+	PerformHttpRequest(canal, function(err, text, headers) end, 'POST', json.encode({username = 'ESX Developer Scripts', embeds = {{["color"] = corfinal, ["author"] = {["name"] = 'Esx Developer Portugal', ["icon_url"] = 'https://cdn.discordapp.com/attachments/878328503148355584/880839161924448256/FiveM-Logo2.png'}, ["description"] = msg, ["footer"] = {["text"] = "Esx Developer Portugal - "..os.date("%x %X %p"),["icon_url"] = "https://media.discordapp.net/attachments/878328503148355584/918644161018728528/FiveM-Logo2_tools.png",},}}, avatar_url = 'https://cdn.discordapp.com/attachments/878328503148355584/880839161924448256/FiveM-Logo2.png'}), { ['Content-Type'] = 'application/json' })
+end
