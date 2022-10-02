@@ -5,6 +5,6 @@ author 'zcmg#5307'
 description 'V1.0'
 
 server_scripts {
-	'server.lua', 
-	'config.lua'
+	'config.lua',
+	'server.lua'
 }

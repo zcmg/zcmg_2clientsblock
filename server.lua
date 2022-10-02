@@ -1,6 +1,6 @@
 ESX = nil
 
-TriggerEvent(Config.Trigger, function(obj) ESX = obj end)
+TriggerEvent(Config.ESXTrigger, function(obj) ESX = obj end)
 
 AddEventHandler('es:playerLoaded', function(source)
     local _source = source
@@ -37,12 +37,9 @@ PerformHttpRequest('https://raw.githubusercontent.com/zcmg/'..GetCurrentResource
 		else
 			update = "^2Precisa de atualizar^1"
 		end
-
 	else
 		update = "Impossivel verificar a versão"
 	end
-
-	
 
 	print(([[^1--------------------------------------------------------------------------
 	███████╗ ██████╗███╗   ███╗ ██████╗      ██████╗ ██████╗ ██████╗ ███████╗
