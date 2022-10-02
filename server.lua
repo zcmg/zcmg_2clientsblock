@@ -2,15 +2,6 @@ ESX = nil
 
 TriggerEvent(Config.Trigger, function(obj) ESX = obj end)
 
-local version = GetResourceMetadata(GetCurrentResourceName(), 'description')
-if version ~= "V1.0" then
-    print(([[^1--------------------------------------------------------------------------
-^1-- ESX DEVELOPER PORTUGAL (^0https://discord.gg/Qt5WraEMxf^1)
-^1-- Precisa de actualizar a sua versão de (^0%s^1)
-^1-- ^0Por favor contactar ESX DEVELOPER PORTUGAL para mais informações^1
-^1--------------------------------------------------------------------------^0]]):format(GetCurrentResourceName()))
-end
-
 AddEventHandler('es:playerLoaded', function(source)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
