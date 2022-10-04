@@ -2,7 +2,7 @@ ESX = nil
 
 TriggerEvent(Config.ESXTrigger, function(obj) ESX = obj end)
 
-AddEventHandler('es:playerLoaded', function(source)
+AddEventHandler('esx:playerLoaded', function(source)
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
     local players = ESX.GetPlayers()
